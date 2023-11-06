@@ -12,7 +12,7 @@ public class HinhAnh {
     @Column(name = "ma_hinh_anh")
     private int maHinhAnh;
 
-    @Column(name = "ten_hinh_anh", length = 256)
+    @Column(name = "ten_hinh_anh", length = 256 , columnDefinition = "NVARCHAR(256)")
     private String tenHinhAnh;
 
     @Column(name = "la_icon") // tiny int

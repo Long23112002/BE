@@ -12,7 +12,7 @@ public class Quyen {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ma_quyen")
     private int maQuyen;
-    @Column(name = "ten_quyen")
+    @Column(name = "ten_quyen" , columnDefinition = "NVARCHAR(256)")
     private String tenQuyen;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = {

@@ -15,7 +15,7 @@ public class SuDanhGia {
     @Column(name = "diem_xep_hang")
     private float diemXepHang;
 
-    @Column(name = "nhan_xet")
+    @Column(name = "nhan_xet" ,columnDefinition = "NVARCHAR(MAX)")
     private String nhanXet;
 
     @ManyToOne(cascade = {

@@ -17,9 +17,9 @@ public class DonHang {
 
     @Column(name = "ngay_tao")
     private Date ngayTao;
-    @Column(name = "dia_chi_mua_hang", length = 512)
+    @Column(name = "dia_chi_mua_hang", length = 512 , columnDefinition = "NVARCHAR(512)")
     private String diaChiMuaHang;
-    @Column(name = "dia_chi_nhan_hang", length = 512 )
+    @Column(name = "dia_chi_nhan_hang", length = 512 , columnDefinition = "NVARCHAR(512)")
     private String diaChiNhanHang;
     @Column(name = "tong_tien_san_pham")
     private double tongTienSanPham;

@@ -15,9 +15,9 @@ public class NguoiDung {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ma_nguoi_dung")
     private int maNguoiDung;
-    @Column(name = "ho_dem")
+    @Column(name = "ho_dem" , columnDefinition = "NVARCHAR(50)")
     private String hoDem;
-    @Column(name = "ten")
+    @Column(name = "ten" , columnDefinition = "NVARCHAR(50)")
     private String ten;
     @Column(name = "ten_dang_nhap")
     private String tenDangNhap;
@@ -29,9 +29,9 @@ public class NguoiDung {
     private String email;
     @Column(name = "so_dien_thoai")
     private String soDienThoai;
-    @Column(name = "dia_chi_mua_hang")
+    @Column(name = "dia_chi_mua_hang" , columnDefinition = "NVARCHAR(MAX)")
     private String diaChiMuaHang;
-    @Column(name = "dia_chi_giao_hang")
+    @Column(name = "dia_chi_giao_hang" , columnDefinition = "NVARCHAR(MAX)")
     private String diaChiGiaoHang;
 
     @OneToMany(mappedBy = "nguoiDung",fetch = FetchType.LAZY, cascade = {

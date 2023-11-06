@@ -12,16 +12,16 @@ public class Sach {
     @Column(name = "ma_sach")
     private int maSach;
 
-    @Column(name = "ten_sach", length = 256)
+    @Column(name = "ten_sach", length = 256 , columnDefinition = "NVARCHAR(256)")
     private String tenSach;
 
-    @Column(name = "ten_tac_gia", length = 512 )
+    @Column(name = "ten_tac_gia", length = 512 , columnDefinition = "NVARCHAR(512)")
     private String tenTacGia;
 
     @Column(name = "isbn", length = 256)
     private String ISBN;
 
-    @Column(name = "mo_ta", columnDefinition = "LONGTEXT" )
+    @Column(name = "mo_ta", columnDefinition = "NVARCHAR(MAX)" )
     private String moTa;
 
     @Column(name="gia_niem_yet")
