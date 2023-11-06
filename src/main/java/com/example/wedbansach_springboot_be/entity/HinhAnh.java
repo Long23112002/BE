@@ -3,7 +3,6 @@ package com.example.wedbansach_springboot_be.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.sql.Blob;
 @Entity
 @Data
 @Table(name = "hinh_anh")
