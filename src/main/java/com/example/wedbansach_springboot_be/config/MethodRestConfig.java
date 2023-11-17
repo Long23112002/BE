@@ -29,7 +29,6 @@ public class MethodRestConfig implements RepositoryRestConfigurer {
                 .allowedMethods("GET", "POST", "PUT", "DELETE");
 
 
-        // Chặn các methods
         HttpMethod[] chanCacPhuongThuc ={
                 HttpMethod.POST,
                 HttpMethod.PUT,
@@ -38,7 +37,7 @@ public class MethodRestConfig implements RepositoryRestConfigurer {
         };
         disableHttpMethods(TheLoai.class, config, chanCacPhuongThuc);
 
-        // Chặn các method DELETE
+
         HttpMethod[] phuongThucDelete = {
                 HttpMethod.DELETE
         };
