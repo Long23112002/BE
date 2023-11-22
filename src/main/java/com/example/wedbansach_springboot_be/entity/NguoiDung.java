@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import jakarta.persistence.*;
-import lombok.Data;
 
 import java.util.List;
 
@@ -16,9 +15,9 @@ public class NguoiDung {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ma_nguoi_dung")
     private int maNguoiDung;
-    @Column(name = "ho_dem")
+    @Column(name = "ho_dem" , columnDefinition = "NVARCHAR(256)" )
     private String hoDem;
-    @Column(name = "ten")
+    @Column(name = "ten" , columnDefinition = "NVARCHAR(256)" )
     private String ten;
     @Column(name = "ten_dang_nhap")
     private String tenDangNhap;
