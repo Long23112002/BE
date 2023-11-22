@@ -3,7 +3,8 @@ package com.example.wedbansach_springboot_be.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
+import java.util.Set;
+
 @Entity
 @ToString
 @Getter
@@ -16,7 +17,7 @@ public class Quyen {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ma_quyen")
     private int maQuyen;
-    @Column(name = "ten_quyen" , columnDefinition = "NVARCHAR(256)")
+    @Column(name = "ten_quyen", columnDefinition = "NVARCHAR(256)")
     private String tenQuyen;
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = {
@@ -28,5 +29,5 @@ public class Quyen {
             joinColumns = @JoinColumn(name = "ma_quyen"),
             inverseJoinColumns = @JoinColumn(name = "ma_nguoi_dung")
     )
-    List<NguoiDung> danhSachNguoiDung;
+    Set<NguoiDung> danhSachNguoiDung;
 }

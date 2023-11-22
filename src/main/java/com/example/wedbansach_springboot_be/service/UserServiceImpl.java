@@ -4,7 +4,6 @@ import com.example.wedbansach_springboot_be.entity.NguoiDung;
 import com.example.wedbansach_springboot_be.entity.Quyen;
 import com.example.wedbansach_springboot_be.repository.NguoiDungRepository;
 import com.example.wedbansach_springboot_be.repository.QuyenRepository;
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,11 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-
-import java.text.Collator;
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Service

@@ -6,6 +6,7 @@ import lombok.Data;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -59,7 +60,7 @@ public class NguoiDung {
             joinColumns = @JoinColumn(name = "ma_nguoi_dung"),
             inverseJoinColumns = @JoinColumn(name = "ma_quyen")
     )
-    private List<Quyen> danhSachQuyen;
+    private Set<Quyen> danhSachQuyen;
 
     @OneToMany(mappedBy = "nguoiDung", fetch = FetchType.LAZY, cascade = {
             CascadeType.PERSIST, CascadeType.MERGE,
@@ -163,12 +164,12 @@ public class NguoiDung {
         this.danhSachSachYeuThich = danhSachSachYeuThich;
     }
 
-    public List<Quyen> getDanhSachQuyen() {
+    public Set<Quyen> getDanhSachQuyen() {
         System.out.println("Quyền :" + danhSachQuyen);
         return danhSachQuyen;
     }
 
-    public void setDanhSachQuyen(List<Quyen> danhSachQuyen) {
+    public void setDanhSachQuyen(Set<Quyen> danhSachQuyen) {
         this.danhSachQuyen = danhSachQuyen;
     }
 
