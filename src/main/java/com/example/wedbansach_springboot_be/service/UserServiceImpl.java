@@ -28,9 +28,20 @@ public class UserServiceImpl implements UserService {
         this.quyenRepository = quyenRepository;
     }
 
+
     @Override
     public NguoiDung findByUsername(String tenDangNhap) {
         return nguoiDungRepository.findByTenDangNhap(tenDangNhap);
+    }
+
+    @Override
+    public String checkDiaChiGiaoHang(String tenDangNhap) {
+        NguoiDung result = nguoiDungRepository.findDiaChiGiaoHang(tenDangNhap);
+        if(result != null){
+            return "true";
+        }else {
+            return "false";
+        }
     }
 
     @Override
@@ -47,4 +58,6 @@ public class UserServiceImpl implements UserService {
     private Collection<? extends GrantedAuthority> rolesToAuthorities(Collection<Quyen> quyens) {
         return quyens.stream().map(quyen -> new SimpleGrantedAuthority(quyen.getTenQuyen())).collect(Collectors.toList());
     }
+
+
 }

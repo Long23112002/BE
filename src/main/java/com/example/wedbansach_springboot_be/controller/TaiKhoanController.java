@@ -64,4 +64,12 @@ public class TaiKhoanController {
         }
         return ResponseEntity.badRequest().body("Xác thực không thành công.");
     }
+
+    @GetMapping("check-dia-chi-giao-hang")
+    public ResponseEntity<String> checkDiaChiGiaoHang(@RequestBody String tenDangNhap) {
+        String result = userService.checkDiaChiGiaoHang(tenDangNhap);
+        System.out.println("Result: " + result);
+        return ResponseEntity.ok().body(result);
+    }
+
 }
