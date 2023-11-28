@@ -36,11 +36,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String checkDiaChiGiaoHang(String tenDangNhap) {
-        NguoiDung result = nguoiDungRepository.findDiaChiGiaoHang(tenDangNhap);
-        if(result != null){
-            return "true";
-        }else {
-            return "false";
+        System.out.println("Input tenDangNhap: " + tenDangNhap);
+        NguoiDung result = nguoiDungRepository.findDiaChiGiaoHangNative(tenDangNhap);
+        System.out.println("Result from repository: " + result);
+
+        if (result != null) {
+            return result.getDiaChiGiaoHang();
+        } else {
+            return "Result is null";
         }
     }
 

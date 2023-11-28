@@ -1,11 +1,15 @@
 package com.example.wedbansach_springboot_be.controller;
 
 import com.example.wedbansach_springboot_be.entity.NguoiDung;
+import com.example.wedbansach_springboot_be.repository.NguoiDungRepository;
 import com.example.wedbansach_springboot_be.sercurity.JwtResponse;
 import com.example.wedbansach_springboot_be.sercurity.LoginRequest;
 import com.example.wedbansach_springboot_be.service.JwtService;
 import com.example.wedbansach_springboot_be.service.TaiKhoanService;
 import com.example.wedbansach_springboot_be.service.UserService;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -32,6 +36,9 @@ public class TaiKhoanController {
 
     @Autowired
     private JwtService jwtService;
+
+    @Autowired
+    private NguoiDungRepository nguoiDungRepository;
 
     // Allow requests from 'http://localhost:3000'
     @PostMapping("/dang-ky")
@@ -65,10 +72,10 @@ public class TaiKhoanController {
         return ResponseEntity.badRequest().body("Xác thực không thành công.");
     }
 
-    @GetMapping("check-dia-chi-giao-hang")
-    public ResponseEntity<String> checkDiaChiGiaoHang(@RequestBody String tenDangNhap) {
+    @GetMapping("/check-dia-chi-giao-hang/{tenDangNhap}")
+    public ResponseEntity<String> checkDiaChiGiaoHang(@PathVariable String tenDangNhap) {
+//        JsonObject jsonObject = JsonParser.parseString(tenDangNhap).getAsJsonObject();
         String result = userService.checkDiaChiGiaoHang(tenDangNhap);
-        System.out.println("Result: " + result);
         return ResponseEntity.ok().body(result);
     }
 
