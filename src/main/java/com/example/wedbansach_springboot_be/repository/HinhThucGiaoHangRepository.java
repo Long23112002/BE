@@ -7,4 +7,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(path = "hinh-thuc-giao-hang")
 public interface HinhThucGiaoHangRepository extends JpaRepository<HinhThucGiaoHang, Integer> {
+
+
 }

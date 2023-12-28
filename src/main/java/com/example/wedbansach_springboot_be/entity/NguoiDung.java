@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Nationalized;
 
 import java.util.List;
 import java.util.Set;
@@ -19,6 +20,7 @@ public class NguoiDung {
     @Column(name = "ho_dem" , columnDefinition = "NVARCHAR(256)" )
     private String hoDem;
     @Column(name = "ten" , columnDefinition = "NVARCHAR(256)" )
+    @Nationalized
     private String ten;
     @Column(name = "ten_dang_nhap")
     private String tenDangNhap;
@@ -32,7 +34,8 @@ public class NguoiDung {
     private String soDienThoai;
     @Column(name = "dia_chi_mua_hang")
     private String diaChiMuaHang;
-    @Column(name = "dia_chi_giao_hang")
+    @Nationalized
+    @Column(name = "dia_chi_giao_hang" , columnDefinition = "NVARCHAR(255)")
     private String diaChiGiaoHang;
     @Column(name = "da_kich_hoat")
     private boolean daKichHoat;

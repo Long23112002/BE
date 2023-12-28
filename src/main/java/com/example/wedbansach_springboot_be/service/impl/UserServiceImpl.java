@@ -1,9 +1,10 @@
-package com.example.wedbansach_springboot_be.service;
+package com.example.wedbansach_springboot_be.service.impl;
 
 import com.example.wedbansach_springboot_be.entity.NguoiDung;
 import com.example.wedbansach_springboot_be.entity.Quyen;
 import com.example.wedbansach_springboot_be.repository.NguoiDungRepository;
 import com.example.wedbansach_springboot_be.repository.QuyenRepository;
+import com.example.wedbansach_springboot_be.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

@@ -1,4 +1,5 @@
-package com.example.wedbansach_springboot_be.service;
+package com.example.wedbansach_springboot_be.service.impl;
+import com.example.wedbansach_springboot_be.service.EmailService;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,7 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EmailServiceImpl implements EmailService{
+public class EmailServiceImpl implements EmailService {
 
 
     private JavaMailSender emailSender;
